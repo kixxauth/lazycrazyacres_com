@@ -15,3 +15,6 @@ sudo rsync \
 --exclude-from=$EXCLUDE_LIST \
 --exclude=dev/*** \
 $REPO_DIR/ $target
+
+sudo chown -R www-data $target
+sudo chgrp -R www-data $target
