@@ -66,6 +66,7 @@ deploy () {
         -e 'ssh -i '$keyfile \
         $REPO_DIR/ ubuntu@$domain:$deploy
 
+        scp -i "$keyfile" "$REPO_DIR/htaccess-pro" "ubuntu@$domain:$deploy/.htaccess"
         ssh -i "$keyfile" ubuntu@$domain "$deploy/dev/remote-deploy.sh $appname"
     done
 }
@@ -88,6 +89,8 @@ mirror () {
     --human-readable \
     --exclude-from=$EXCLUDE_LIST \
     $REPO_DIR/ $target
+
+    cp "$REPO_DIR/htaccess-dev" "$target/.htaccess"
 }
 
 main "$@"
