@@ -52,8 +52,6 @@ deploy () {
     local deploy="/home/ubuntu/websites/$appname"
     local instances="$(cat "$instance_list")"
 
-    local conf="$deploy/conf.json"
-
     for domain in $instances; do
         rsync \
         --recursive \
