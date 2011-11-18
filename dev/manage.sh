@@ -1,9 +1,7 @@
 #!/bin/bash
 DEV_DIR="$(cd `dirname $0` && pwd)"
-REPO_DIR="$(dirname "$SCRIPT_DIR")"
-
-# Handy to have around
-DATE_NOW="$(date +%Y-%m-%d-%H:%M:%S)"
+REPO_DIR="$(dirname "$DEV_DIR")"
+EXCLUDE_LIST="$DEV_DIR/rsync-exclude.list"
 
 main () {
     local cmd="$1"
@@ -13,7 +11,7 @@ main () {
             mirror "$@"
             ;;
         'deploy')
-            # <keyfile> <insance_list> <restart>
+            # <keyfile> <insance_list> <appname>
             shift
             deploy "$@"
             ;;
@@ -24,11 +22,20 @@ main () {
     esac
 }
 
+fail () {
+    echo "$@" >&2
+    exit 1
+}
+
 deploy () {
+    if [ -z $1 ]; then
+        echo "usage: deploy <keyfile> <instance_list> <appname>"
+        exit
+    fi
+
     local keyfile="$1"
     local instance_list="$2"
-    local local_conf="$3"
-    local restart="$4"
+    local appname="$3"
 
     if [ -z "$keyfile" ]; then
         fail "    aws keyfile is required"
@@ -38,8 +45,11 @@ deploy () {
         fail "    aws instance list is required"
     fi
 
-    local deploy="/home/ubuntu/platform"
-    local exclude_list="$BUILD_CONF/dist-exclude.list"
+    if [ -z "$appname" ]; then
+        fail "    application name is required"
+    fi
+
+    local deploy="/home/ubuntu/websites/$appname"
     local instances="$(cat "$instance_list")"
 
     local conf="$deploy/conf.json"
@@ -54,19 +64,11 @@ deploy () {
         --compress \
         --progress \
         --human-readable \
-        --exclude-from=$exclude_list \
-        --log-file="$LOG_DIR/${DATE_NOW}_${domain}-deploy.log" \
+        --exclude-from=$EXCLUDE_LIST \
         -e 'ssh -i '$keyfile \
         $REPO_DIR/ ubuntu@$domain:$deploy
 
-        if ! [ -z "$local_conf" ]; then
-            scp -i "$keyfile" "$local_conf" ubuntu@$domain:$conf
-        fi
-
-        if ! [ -z $restart ]; then
-            echo "restarting $domain ..."
-            ssh -i "$keyfile" ubuntu@$domain "$deploy/remote/restart.sh $domain $conf"
-        fi
+        ssh -i "$keyfile" ubuntu@$domain "$deploy/dev/remote-deploy.sh $appname"
     done
 }
 
@@ -77,7 +79,6 @@ mirror () {
     fi
 
     local target="$1"
-    local exclude_list="$DEV_DIR/rsync-exclude.list"
     rsync \
     --recursive \
     --links \
@@ -87,7 +88,7 @@ mirror () {
     --compress \
     --progress \
     --human-readable \
-    --exclude-from=$exclude_list \
+    --exclude-from=$EXCLUDE_LIST \
     $REPO_DIR/ $target
 }
 
