@@ -14,14 +14,30 @@
 </head>
 
 <body>
-  <header>
+
+<header>
     <a class="logo-block" href="/" title="Lazy Crazy Acres" rel="home">
     <hgroup class="logo-block">
         <h1 class="image-text">Lazy Crazy Acres Locally Made Organic Gelato<h1>
         <h2 class="image-text">The rambling farmtable and creamery making Italian style ice cream.<h2>
     </hgroup>
     </a>
-  </header>
 
-  <nav>
-  </nav>
+    <div class="description">
+    </div>
+</header>
+
+<nav>
+    <ul>
+    <li><a href="<?php bloginfo( 'wpurl' ); ?>/about-lazy-crazy-acres"
+            title="All About Lazy Crazy Acres">about</a></li>
+        <li><a href="/lazy-crazy-acres-creamery"
+            title="The Lazy Crazy Acres Creamery">creamery</a></li>
+        <li><a href="/lazy-crazy-acres-farm-table"
+            title="Good Home Cooking from Lazy Crazy Acres">farmtable</a></li>
+        <li><a href="/lazy-crazy-acres-calendar"
+            title="The Lazy Crazy Acres Calendar">calendar</a></li>
+        <li><a href="/lazy-crazy-acres-links"
+            title="Links we think you would like">links</a></li>
+    </ul>
+</nav>
