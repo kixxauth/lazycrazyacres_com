@@ -11,12 +11,24 @@
 
 get_header(); ?>
 
-<?php the_post(); ?>
 <div id="main" role="main"><div class="inner">
-<div id="page-<?php the_ID(); ?>" class="page-content">
-<div class="content">
-<?php the_content(); ?>
-<div>
+<div id="page-blog-posts" class="page-content">
+<?php if ( have_posts() ) : ?>
+    <?php while ( have_posts() ) : the_post(); ?>
+
+        <?php get_template_part( 'content', get_post_format() ); ?>
+
+    <?php endwhile; ?>
+<?php else : ?>
+    <article id="post-0" class="post no-results not-found">
+        <header class="entry-header">
+            <h1 class="entry-title">Nothing Found</h1>
+        </header>
+        <div class="entry-content">
+            <p>Apologies, but no results were found for the requested archive.</p>
+        </div>
+    </article>
+<?php endif; ?>
 </div>
 <?php get_sidebar(); ?>
 </div></div><!-- end #main .inner -->

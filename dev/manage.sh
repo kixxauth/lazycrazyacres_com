@@ -90,7 +90,9 @@ mirror () {
     --exclude-from=$EXCLUDE_LIST \
     $REPO_DIR/ $target
 
-    cp "$REPO_DIR/htaccess-dev" "$target/.htaccess"
+    if [ -f "$REPO_DIR/htaccess-dev" ]; then
+        cp "$REPO_DIR/htaccess-dev" "$target/.htaccess"
+    fi
 }
 
 main "$@"

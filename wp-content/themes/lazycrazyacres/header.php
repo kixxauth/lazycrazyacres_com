@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <title>Lazy Crazy Acres</title>
-  <meta name="description" content="The rambling farmtable and creamery making Italian style ice cream.">
+  <meta name="description" content="Catskill Mountain grazing farm and creamery making Italian style ice cream.">
   <meta name="author" content="Kris Walker <kris@kixx.name> (http://www.kixx.name)">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
@@ -31,13 +31,17 @@
     <ul>
     <li><a href="<?php bloginfo( 'wpurl' ); ?>/about-lazy-crazy-acres"
             title="All About Lazy Crazy Acres">about</a></li>
-        <li><a href="/lazy-crazy-acres-creamery"
+
+        <li><a href="<?php bloginfo( 'wpurl' ); ?>/lazy-crazy-acres-creamery"
             title="The Lazy Crazy Acres Creamery">creamery</a></li>
-        <li><a href="/lazy-crazy-acres-farm-table"
+
+        <li><a href="<?php bloginfo( 'wpurl' ); ?>/lazy-crazy-acres-farm-table"
             title="Good Home Cooking from Lazy Crazy Acres">farmtable</a></li>
-        <li><a href="/lazy-crazy-acres-calendar"
+
+        <li><a href="<?php bloginfo( 'wpurl' ); ?>/lazy-crazy-acres-event-calendar"
             title="The Lazy Crazy Acres Calendar">calendar</a></li>
-        <li><a href="/lazy-crazy-acres-links"
+
+        <li><a href="<?php bloginfo( 'wpurl' ); ?>/lazy-crazy-acres-links"
             title="Links we think you would like">links</a></li>
     </ul>
 </nav>
