@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <title>Lazy Crazy Acres</title>
-  <meta name="description" content="Catskill Mountain grazing farm and creamery making Italian style ice cream.">
+  <meta name="description" content="Catskill Mountain grazing farm producting farmstead ice creams and bottled creamline milk.">
   <meta name="author" content="Kris Walker <kris@kixx.name> (http://www.kixx.name)">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
@@ -15,17 +15,8 @@
 
 <body>
 
-<header>
-    <a class="logo-block" href="/" title="Lazy Crazy Acres" rel="home">
-    <hgroup class="logo-block">
-        <h1 class="image-text">Lazy Crazy Acres Locally Made Organic Gelato<h1>
-        <h2 class="image-text">The rambling farmtable and creamery making Italian style ice cream.<h2>
-    </hgroup>
-    </a>
-
-    <div class="description">
-    </div>
-</header>
+<?php
+lca_header_frame(); ?>
 
 <nav>
     <ul>
