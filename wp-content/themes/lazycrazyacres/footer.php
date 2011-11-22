@@ -31,6 +31,49 @@
 </footer>
 </div><!-- end #wrapper -->
 
+<div id="top-nav">
+<ul class="top-nav">
+    <li class="ir twitter">
+        <a href="http://twitter.com/#!/LazyCrazyAcres" target="_blank">Twitter</a>
+    </li>
+    <li class="ir facebook">
+        <a href="http://www.facebook.com/pages/Lazy-Crazy-Acres/127652313955969" target="_blank">
+            Facebook</a>
+    </li>
+    <li>
+        <?php
+        if ( is_page( 'contact-lazy-crazy-acres' ) ) {
+            echo '<a href="' . get_bloginfo( 'wpurl' ) . '/contact-lazy-crazy-acres" class="active">contact</a>';
+        } else {
+            echo '<a href="' . get_bloginfo( 'wpurl' ) . '/contact-lazy-crazy-acres">contact</a>';
+        }
+        ?>
+    </li>
+    <li>
+        <?php
+        if ( !is_page() ) {
+            echo '<a href="' . get_bloginfo( 'wpurl' ) . '/blog" class="active">blog</a>';
+        } else {
+            echo '<a href="' . get_bloginfo( 'wpurl' ) . '/blog">blog</a>';
+        }
+        ?>
+    </li>
+    <li>
+        <?php
+        if ( is_page( 'welcome-to-lazy-crazy-acres' ) ) {
+            echo '<a href="' . get_bloginfo( 'wpurl' ) . '/" class="active">home</a>';
+        } else {
+            echo '<a href="' . get_bloginfo( 'wpurl' ) . '/">home</a>';
+        }
+        ?>
+    </li>
+    <li class="lca-cow">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/little-cow.gif"
+            width="31" height="16" />
+    </li>
+</ul>
+</div>
+
 <?php
 
 $custom_fields = get_post_custom();

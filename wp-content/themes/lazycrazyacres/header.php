@@ -27,18 +27,23 @@ lca_header_frame( $header_image ); ?>
 <nav id="navigation">
     <ul class="navigation">
         <li><a href="<?php bloginfo( 'wpurl' ); ?>/about-lazy-crazy-acres"
-                title="All About Lazy Crazy Acres">about</a></li>
+            <?php if ( is_page( 'about-lazy-crazy-acres' ) ) { echo 'class="active"'; } ?>
+            title="All About Lazy Crazy Acres">about</a></li>
 
         <li><a href="<?php bloginfo( 'wpurl' ); ?>/lazy-crazy-acres-creamery"
+            <?php if ( is_page( 'lazy-crazy-acres-creamery' ) ) { echo 'class="active"'; } ?>
             title="The Lazy Crazy Acres Creamery">creamery</a></li>
 
         <li><a href="<?php bloginfo( 'wpurl' ); ?>/lazy-crazy-acres-farm-table"
+            <?php if ( is_page( 'lazy-crazy-acres-farm-table' ) ) { echo 'class="active"'; } ?>
             title="Good Home Cooking from Lazy Crazy Acres">farmtable</a></li>
 
         <li><a href="<?php bloginfo( 'wpurl' ); ?>/lazy-crazy-acres-event-calendar"
+            <?php if ( is_page( 'lazy-crazy-acres-event-calendar' ) ) { echo 'class="active"'; } ?>
             title="The Lazy Crazy Acres Calendar">calendar</a></li>
 
         <li><a href="<?php bloginfo( 'wpurl' ); ?>/lazy-crazy-acres-links"
+            <?php if ( is_page( 'lazy-crazy-acres-links' ) ) { echo 'class="active"'; } ?>
             title="Links we think you would like">links</a></li>
     </ul>
 </nav>

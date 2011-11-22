@@ -164,7 +164,8 @@ header.homepage hgroup.logo-block {
 	padding: 0 .7em;
 	text-decoration: none;
 }
-#navigation ul.navigation li a:hover {
+#navigation ul.navigation li a:hover,
+#navigation ul.navigation li a.active {
 	background-color: #bed07c;
 	color: #62290F;
 }
@@ -334,6 +335,56 @@ article.post footer {
 }
 #footer p.credits {
 	font-size: 0.9em;
+}
+
+#top-nav {
+	background: transparent url(./images/topnav.png) repeat-x;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 99;
+}
+ul.top-nav {
+	font-size: .9em;
+	height: 26px;
+	line-height: 26px;
+	list-style-type: none;
+	margin: 0 auto;
+	width: 960px;
+	overflow: hidden;
+	padding: 0;
+}
+ul.top-nav li {
+	float: right;
+	margin-left: 1.2em;
+}
+ul.top-nav li.twitter {
+	margin-right: 36px;
+	margin-left: .6em;
+}
+ul.top-nav li a {
+	display: block;
+	height: 26px;
+	text-decoration: none;
+}
+ul.top-nav li a.active {
+	color: #97b83d;
+}
+ul.top-nav li.twitter a,
+ul.top-nav li.facebook a {
+	width: 22px;
+}
+ul.top-nav li.twitter a {
+	background: transparent url(./images/twitter-sm.gif) no-repeat center center;
+}
+ul.top-nav li.facebook a {
+	background: transparent url(./images/facebook-sm.gif) no-repeat center center;
+}
+ul.top-nav li.twitter a:hover {
+	background: transparent url(./images/twitter-over-sm.gif) no-repeat center center;
+}
+ul.top-nav li.facebook a:hover {
+	background: transparent url(./images/facebook-over-sm.gif) no-repeat center center;
 }
 
 #slideshow {
