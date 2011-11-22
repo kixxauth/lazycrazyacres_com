@@ -125,7 +125,7 @@ header.page-header.homepage {
 	height: 299px;
 }
 
-hgroup.logo-block {
+div.logo-block {
 	background: transparent url(./images/lazycrazyacres-logo-3.png) no-repeat;
 	height: 246px;
 	width: 265px;
@@ -134,7 +134,7 @@ hgroup.logo-block {
 	top: 20px;
 	z-index: 1;
 }
-header.homepage hgroup.logo-block {
+header.homepage div.logo-block {
 	top: 40px;
 }
 

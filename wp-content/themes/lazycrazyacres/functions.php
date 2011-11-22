@@ -58,12 +58,13 @@ function lca_header_frame( $header_image ) {
     } else {
         echo '<header class="page-header" style="background-image: url(' . $bg_image . ');">';
     } ?>
-    <a class="logo-block" href="<?php echo get_bloginfo( 'wpurl' ) ?>" title="Lazy Crazy Acres" rel="home"><hgroup class="logo-block">
+    <a class="logo-block" href="<?php echo get_bloginfo( 'wpurl' ) ?>" title="Lazy Crazy Acres" rel="home">
+    <div class="logo-block">
     <h1 class="ir"><?php echo lca_get_title(); ?></h1>
     <h2 class="ir">Lazy Crazy Acres is a Catskill Mountain grazing farm and creamery.</h2>
     <?php
     if ( $is_homepage ) { ?>
-        </hgroup></a>
+        </div></a>
         <div id="proposition" class="ir">
             <p>Ice creams and fresh dairy;</p>
             <p>Farmstead ice creams and bottled creamline milk.</p>
@@ -75,7 +76,7 @@ function lca_header_frame( $header_image ) {
         </header>
     <?php
     } else {
-        echo '</hgroup></a></header>';
+        echo '</div></a></header>';
     }
 }
 
