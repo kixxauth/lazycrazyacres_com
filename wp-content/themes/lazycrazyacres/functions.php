@@ -12,12 +12,13 @@ class LCA_Facebook_Widget extends WP_Widget {
         echo $before_widget;
         ?>
         <p class="ir">Find us on Facebook for updates and info!</p>
-        <a href="http://www.facebook.com/pages/Lazy-Crazy-Acres/127652313955969" target="_blank"
-            alt="Facebook icon" title="Facebook page">
-            <img src="<?php echo get_template_directory_uri() . '/images'; ?>/facebook-callout.png" width="220" height="88" />
+            <a href="http://www.facebook.com/pages/Lazy-Crazy-Acres/127652313955969" target="_blank"
+                title="Facebook page">
+            <img src="<?php echo get_template_directory_uri() . '/images'; ?>/facebook-callout.png"
+                width="220" height="88" alt="Facebook icon" />
         </a>
         <?php
-        echo $after_widget;
+        echo '</li>';
     }
 }
 
