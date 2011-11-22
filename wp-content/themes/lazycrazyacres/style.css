@@ -118,6 +118,7 @@ header.page-header {
 	background-color: transparent;
 	background-repeat: no-repeat;
 	position: relative;
+	overflow: hidden;
 }
 header.page-header.homepage {
 	background: transparent url(./images/head-1.png) no-repeat center top;
@@ -286,6 +287,7 @@ li.widget_text ul {
 }
 li.widget_text a {
 	font-weight: normal;
+	text-decoration: none;
 }
 li.widget_text a:hover {
 	color: #62290F;
@@ -305,6 +307,10 @@ li.widget_archive ul {
 	margin: .5em 0 0 0;
 	list-style-type: disc;
 	padding: 0 0 0 1em;
+}
+li.widget_recent_entries ul a,
+li.widget_archive ul a {
+	text-decoration: none;
 }
 li.widget_recent_entries ul a:hover,
 li.widget_archive ul a:hover {

@@ -18,7 +18,7 @@ the_post(); ?>
         </fieldset>
         <fieldset>
             <label for="id_email" class="lca">email:</label>
-            <input id="id_email"type="text" class="lca" name="email" size="30" />
+            <input id="id_email" type="text" class="lca" name="email" size="30" />
         </fieldset>
         <fieldset>
             <label for="id_comment" class="lca">leave a comment:</label>
