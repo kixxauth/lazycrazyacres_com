@@ -69,7 +69,7 @@
     </li>
     <li class="lca-cow">
         <img src="<?php echo get_template_directory_uri(); ?>/images/little-cow.gif"
-            width="31" height="16" />
+            width="31" height="16" alt="Little Cow" />
     </li>
 </ul>
 </div>

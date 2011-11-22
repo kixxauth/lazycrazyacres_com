@@ -130,5 +130,6 @@ function pause() {
 
 $(function () {
     load(start);
+    $(window).focus(start).blur(pause);
 });
 }());

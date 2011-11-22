@@ -12,7 +12,8 @@ class LCA_Facebook_Widget extends WP_Widget {
         echo $before_widget;
         ?>
         <p class="ir">Find us on Facebook for updates and info!</p>
-        <a href="http://www.facebook.com/pages/Lazy-Crazy-Acres/127652313955969" target="_blank">
+        <a href="http://www.facebook.com/pages/Lazy-Crazy-Acres/127652313955969" target="_blank"
+            alt="Facebook icon" title="Facebook page">
             <img src="<?php echo get_template_directory_uri() . '/images'; ?>/facebook-callout.png" width="220" height="88" />
         </a>
         <?php
@@ -68,7 +69,7 @@ function lca_header_frame( $header_image ) {
         </div>
         <div id="slideshow">
         <img src="<?php echo get_template_directory_uri(); ?>/images/slide0.png"
-            width="421px" height="328px" alt="slideshow image" />
+            width="421" height="328" alt="slideshow image" />
         </div>
         </header>
     <?php
@@ -108,18 +109,18 @@ function lca_widgets_init() {
 		'name' => 'Main Sidebar',
 		'id' => 'main-sidebar',
 		'before_widget' => '<li id="%1$s" class="widget %2$s">',
-		'after_widget' => "</li>",
+		'after_widget' => "</div></li>",
 		'before_title' => '<div class="widget-top"></div><div class="widget-content"><h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'after_title' => '</h3>'
 	) );
 
 	register_sidebar( array(
 		'name' => 'Blog Sidebar',
 		'id' => 'blog-sidebar',
 		'before_widget' => '<li id="%1$s" class="widget %2$s">',
-		'after_widget' => "</li>",
+		'after_widget' => "</div></li>",
 		'before_title' => '<div class="widget-top"></div><div class="widget-content"><h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'after_title' => '</h3>'
 	) );
 }
 add_action( 'widgets_init', 'lca_widgets_init' );
