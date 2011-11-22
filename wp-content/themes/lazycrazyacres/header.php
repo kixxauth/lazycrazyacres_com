@@ -13,7 +13,7 @@
   <script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.custom.93064.js"></script>
 </head>
 
-<body>
+<body><div id="wrapper">
 
 <?php
 lca_header_frame(); ?>

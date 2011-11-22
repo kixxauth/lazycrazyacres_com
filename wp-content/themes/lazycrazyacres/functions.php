@@ -45,11 +45,28 @@ function lca_get_title() {
 function lca_header_frame() {
     $custom_fields = get_post_custom();
     $bg_image = get_template_directory_uri() . '/images/' . $custom_fields['header_image'][0];
-    echo '<header style="background-image: url(' . $bg_image . ');">';
-    echo '<a class="logo-block" href="' . get_bloginfo( 'wpurl' ) . '" title="Lazy Crazy Acres" rel="home"><hgroup class="logo-block">';
-    echo '<h1 class="image-text">' . lca_get_title() . '</h1>';
-    echo '<h2 class="image-text">Lazy Crazy Acres is a Catskill Mountain grazing farm and creamery.</h2>';
-    echo '</hgroup></a></header>';
+    $is_homepage = is_page( 'welcome-to-lazy-crazy-acres' );
+    if ( $is_homepage ) {
+        echo '<header class="page-header homepage">';
+    } else {
+        echo '<header class="page-header" style="background-image: url(' . $bg_image . ');">';
+    } ?>
+    <a class="logo-block" href="' . get_bloginfo( 'wpurl' ) . '" title="Lazy Crazy Acres" rel="home"><hgroup class="logo-block">
+    <h1 class="image-text"><?php echo lca_get_title(); ?></h1>
+    <h2 class="image-text">Lazy Crazy Acres is a Catskill Mountain grazing farm and creamery.</h2>
+    <?php
+    if ( $is_homepage ) { ?>
+        </hgroup></a>
+        <div id="proposition">
+            <p>Ice creams and fresh dairy;</p>
+            <p>Farmstead ice creams and bottled creamline milk.</p>
+        </div>
+        <div id="slideshow"></div>
+        </header>
+    <?php
+    } else {
+        echo '</hgroup></a></header>';
+    }
 }
 
 if ( ! function_exists( 'lca_posted_on' ) ) :

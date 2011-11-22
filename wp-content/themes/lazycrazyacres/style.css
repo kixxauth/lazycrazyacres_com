@@ -90,9 +90,37 @@ td { vertical-align: top; }
 /* ==|== primary styles =====================================================
    Author:
    ========================================================================== */
+body {
+	background: #fdfadd url(./images/burlap.png) repeat fixed;
+	color: #62290F;
+	font-family: FreeMono, "Courier New", Courier, monospace;
+}
 
+.image-text {
+	text-indent: -9999px;
+}
 
+#wrapper {
+	width: 960px;
+	margin: 0 auto;
+	padding-top: 40px;
+}
 
+header.page-header.homepage {
+	background: transparent url(./images/head-1.png) no-repeat center top;
+	height: 299px;
+	position: relative;
+}
+
+#proposition {
+	background: transparent url(./images/proposition-1.gif) no-repeat;
+	width: 247px;
+	height: 130px;
+	position: absolute;
+	left: 182px;
+	top: 46px;
+	text-indent: -9999px;
+}
 
 /* ==|== media queries ======================================================
    PLACEHOLDER Media Queries for Responsive Design.
