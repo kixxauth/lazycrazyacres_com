@@ -17,7 +17,7 @@ the_post(); ?>
     <?php lca_page_title_frame(); ?>
     <div class="content">
     <?php the_content(); ?>
-    <div>
+    </div>
 </div>
 <?php get_sidebar(); ?>
 </div></div><!-- end #main .inner -->

@@ -1,25 +1,25 @@
-<footer>
+<footer id="footer">
     <p class="links">
         <a href="<?php bloginfo( 'wpurl' ); ?>/"
             title="Lazy Crazy Acres Home">home</a>
-        &nbsp;|&nbsp;
+        |
         <a href="<?php bloginfo( 'wpurl' ); ?>/about-lazy-crazy-acres"
             title="All About Lazy Crazy Acres">about</a>
-        &nbsp;|&nbsp;
+        |
         <a href="<?php bloginfo( 'wpurl' ); ?>/blog"
             title="The Lazy Crazy Acres Blog">blog</a>
-        &nbsp;|&nbsp;
+        |
         <a href="<?php bloginfo( 'wpurl' ); ?>/lazy-crazy-acres-links"
             title="Links we think you would like">links</a>
-        &nbsp;|&nbsp;
+        |
         <a href="<?php bloginfo( 'wpurl' ); ?>/contact-lazy-crazy-acres"
             title="Contact Lazy Crazy Acres">contact</a>
     </p>
     <p class="contact-info">
         &copy; 2011 Lazy Crazy Acres
-        &nbsp;|&nbsp;
+        |
         845-802-4098
-        &nbsp;|&nbsp;
+        |
         info@LazyCrazyAcres.com
     </p>
     <p class="credits">
@@ -29,9 +29,25 @@
         </a>
     </p>
 </footer>
-
-<!-- Grab Google CDN's jQuery, with a protocol relative URL -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 </div><!-- end #wrapper -->
+
+<?php
+
+$custom_fields = get_post_custom();
+$scripts = $custom_fields['script'];
+
+if ( isset( $scripts ) ) { ?>
+    <script>var gG={templateDir:'<?php echo get_template_directory_uri() ?>'};</script>
+<?php
+    foreach ( $scripts as &$path )  {
+        if ( $path == 'jquery.js' ) {
+            echo '<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>';
+        } else {
+            echo '<script src="' . get_template_directory_uri() . '/js/' . $path . '"></script>';
+        }
+    }
+}
+
+?>
 </body>
 </html>

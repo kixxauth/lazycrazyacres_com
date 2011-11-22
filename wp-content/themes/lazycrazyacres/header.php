@@ -16,12 +16,18 @@
 <body><div id="wrapper">
 
 <?php
-lca_header_frame(); ?>
+if ( is_page() ) {
+    $header_image = null;
+} else {
+    $header_image = 'header5.png';
+}
 
-<nav>
-    <ul>
-    <li><a href="<?php bloginfo( 'wpurl' ); ?>/about-lazy-crazy-acres"
-            title="All About Lazy Crazy Acres">about</a></li>
+lca_header_frame( $header_image ); ?>
+
+<nav id="navigation">
+    <ul class="navigation">
+        <li><a href="<?php bloginfo( 'wpurl' ); ?>/about-lazy-crazy-acres"
+                title="All About Lazy Crazy Acres">about</a></li>
 
         <li><a href="<?php bloginfo( 'wpurl' ); ?>/lazy-crazy-acres-creamery"
             title="The Lazy Crazy Acres Creamery">creamery</a></li>

@@ -6,27 +6,28 @@ get_header();
 the_post(); ?>
 
 <div id="main" role="main"><div class="inner">
-<div id="page-<?php the_ID(); ?>" class="page-content">
+<div id="page-<?php the_ID(); ?>" class="page-content contact-us">
     <?php lca_page_title_frame(); ?>
     <div class="content">
     <?php the_content(); ?>
-    <div>
+    </div>
     <form id="contact-form" method="POST">
-        <fieldset>
+        <fieldset class="first">
             <label for="id_name" class="lca">name:</label>
-            <input id="id_name" type="text" class="lca" name="name" />
+            <input id="id_name" type="text" class="lca" name="name" size="32" />
         </fieldset>
         <fieldset>
             <label for="id_email" class="lca">email:</label>
-            <input id="id_email"type="text" class="lca" name="email" />
+            <input id="id_email"type="text" class="lca" name="email" size="30" />
         </fieldset>
         <fieldset>
             <label for="id_comment" class="lca">leave a comment:</label>
-            <textarea id="id_comment" class="lca" name="comments"></textarea>
+            <textarea id="id_comment" class="lca" name="comments"
+                cols="50" rows="8"></textarea>
         </fieldset>
-        <fieldset>
-            <input type="submit" value="submit" class="lca" />
+        <fieldset class="form-buttons">
             <input type="reset" value="clear" class="lca" />
+            <input type="submit" value="submit" class="lca" />
         </fieldset>
     </form>
 </div>

@@ -11,7 +11,7 @@ class LCA_Facebook_Widget extends WP_Widget {
         extract( $args );
         echo $before_widget;
         ?>
-        <p class="image-text">Find us on Facebook for updates and info!</p>
+        <p class="ir">Find us on Facebook for updates and info!</p>
         <a href="http://www.facebook.com/pages/Lazy-Crazy-Acres/127652313955969" target="_blank">
             <img src="<?php echo get_template_directory_uri() . '/images'; ?>/facebook-callout.png" width="220" height="88" />
         </a>
@@ -25,7 +25,7 @@ function lca_page_title_frame() {
     $page_title = $custom_fields['page_title'][0];
     if ($custom_fields['title_image'][0]) {
         $title_image = get_template_directory_uri() . '/images/' . $custom_fields['title_image'][0];
-        echo '<h4 class="page-title title-text" style="background-image: url(' . $title_image . ');">';
+        echo '<h4 class="page-title ir" style="background-image: url(' . $title_image . ');">';
     } else {
         echo '<h4 class="page-title">';
     }
@@ -42,26 +42,34 @@ function lca_get_title() {
     return $page_title;
 }
 
-function lca_header_frame() {
+function lca_header_frame( $header_image ) {
     $custom_fields = get_post_custom();
-    $bg_image = get_template_directory_uri() . '/images/' . $custom_fields['header_image'][0];
+
+    if ( !$header_image ) {
+        $header_image = $custom_fields['header_image'][0];
+    }
+
+    $bg_image = get_template_directory_uri() . '/images/' . $header_image;
     $is_homepage = is_page( 'welcome-to-lazy-crazy-acres' );
     if ( $is_homepage ) {
         echo '<header class="page-header homepage">';
     } else {
         echo '<header class="page-header" style="background-image: url(' . $bg_image . ');">';
     } ?>
-    <a class="logo-block" href="' . get_bloginfo( 'wpurl' ) . '" title="Lazy Crazy Acres" rel="home"><hgroup class="logo-block">
-    <h1 class="image-text"><?php echo lca_get_title(); ?></h1>
-    <h2 class="image-text">Lazy Crazy Acres is a Catskill Mountain grazing farm and creamery.</h2>
+    <a class="logo-block" href="<?php echo get_bloginfo( 'wpurl' ) ?>" title="Lazy Crazy Acres" rel="home"><hgroup class="logo-block">
+    <h1 class="ir"><?php echo lca_get_title(); ?></h1>
+    <h2 class="ir">Lazy Crazy Acres is a Catskill Mountain grazing farm and creamery.</h2>
     <?php
     if ( $is_homepage ) { ?>
         </hgroup></a>
-        <div id="proposition">
+        <div id="proposition" class="ir">
             <p>Ice creams and fresh dairy;</p>
             <p>Farmstead ice creams and bottled creamline milk.</p>
         </div>
-        <div id="slideshow"></div>
+        <div id="slideshow">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/slide0.png"
+            width="421px" height="328px" alt="slideshow image" />
+        </div>
         </header>
     <?php
     } else {
@@ -77,7 +85,7 @@ if ( ! function_exists( 'lca_posted_on' ) ) :
  * @since Twenty Eleven 1.0
  */
 function lca_posted_on() {
-	printf( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>',
+	printf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a>',
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
@@ -101,7 +109,7 @@ function lca_widgets_init() {
 		'id' => 'main-sidebar',
 		'before_widget' => '<li id="%1$s" class="widget %2$s">',
 		'after_widget' => "</li>",
-		'before_title' => '<h3 class="widget-title">',
+		'before_title' => '<div class="widget-top"></div><div class="widget-content"><h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
 
@@ -110,7 +118,7 @@ function lca_widgets_init() {
 		'id' => 'blog-sidebar',
 		'before_widget' => '<li id="%1$s" class="widget %2$s">',
 		'after_widget' => "</li>",
-		'before_title' => '<h3 class="widget-title">',
+		'before_title' => '<div class="widget-top"></div><div class="widget-content"><h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
 }
