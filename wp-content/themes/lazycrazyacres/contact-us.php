@@ -11,7 +11,7 @@ the_post(); ?>
     <div class="content">
     <?php the_content(); ?>
     </div>
-    <form id="contact-form" method="POST">
+    <form id="contact-form" action="<?php bloginfo( 'wpurl' ); ?>/contact-us.php" method="POST">
         <fieldset class="first">
             <label for="id_name" class="lca">name:</label>
             <input id="id_name" type="text" class="lca" name="name" size="32" />
@@ -22,7 +22,7 @@ the_post(); ?>
         </fieldset>
         <fieldset>
             <label for="id_comment" class="lca">leave a comment:</label>
-            <textarea id="id_comment" class="lca" name="comments"
+            <textarea id="id_comment" class="lca" name="comment"
                 cols="50" rows="8"></textarea>
         </fieldset>
         <fieldset class="form-buttons">
@@ -30,10 +30,13 @@ the_post(); ?>
             <input type="submit" value="submit" class="lca" />
         </fieldset>
     </form>
+    <div id="thank-you" style="display: none;">
+        <p>Thanks so much for dropping us a note!</p>
+    </div>
 </div>
 </div></div><!-- end #main .inner -->
 
-<script type="text/javascript">
+<script type="text/html">
 $('#contact-form').submit(function (ev) {
     ev.preventDefault();
     var re = /^[a-z0-9][^\(\)\<\>\@\,\;\:\\\"\[\]]*\@[a-z0-9][a-z0-9\-\.]*\.[a-z]{2,4}$/i;
