@@ -118,7 +118,6 @@ header.page-header {
 	background-color: transparent;
 	background-repeat: no-repeat;
 	position: relative;
-	overflow: hidden;
 }
 header.page-header.homepage {
 	background: transparent url(./images/head-1.png) no-repeat center top;
@@ -421,6 +420,7 @@ ul.top-nav li.facebook a:hover {
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: 99;
 }
 
 div.page-content p.page-links {
@@ -471,6 +471,15 @@ div.page-content.creamery p.page-links a {
 }
 #contact-form fieldset.form-buttons input:hover {
 	background-color: #bed07c;
+}
+#thank-you {
+	margin-top: 48px;
+	text-align: center;
+	color: #97b83d;
+	font-size: 44px;
+	font-weight: bold;
+	text-transform: lowercase;
+	line-height: 1.2;
 }
 
 /* ==|== media queries ======================================================

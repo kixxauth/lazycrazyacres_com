@@ -98,11 +98,7 @@ function getImagePath(aFileName) {
 }
 
 function start() {
-    if (gTimeout === null) {
-        gTimeout = window.setTimeout(changeSlide, INTERVAL);
-    } else {
-        window.clearTimeout(gTimeout);
-    }
+    gTimeout = window.setTimeout(changeSlide, INTERVAL);
 }
 
 function changeSlide() {
@@ -121,15 +117,7 @@ function getNextSlide() {
     return gImages[iCurrentIndex];
 }
 
-function pause() {
-    if (gTimeout !== null) {
-        window.clearTimeout(gTimeout);
-    }
-    gTimeout = null;
-}
-
 $(function () {
     load(start);
-    $(window).focus(start).blur(pause);
 });
 }());

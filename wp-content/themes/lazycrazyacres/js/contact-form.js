@@ -3,6 +3,7 @@ var $form = $('#contact-form')
   , $email = $('#id_email')
   , $name = $('#id_name')
   , $comment = $('#id_comment')
+  , isLocked = false
 
 function onSuccess(aData, aStatus, aXHR) {
     $form.fadeOut(600, function () {
@@ -65,6 +66,9 @@ function clearForm() {
 $form.submit(function (ev) {
     ev.preventDefault();
 
+    if (isLocked) return;
+    isLocked = true;
+
     var data = {}
       , req = {
             url: $form.attr('action')
@@ -76,6 +80,8 @@ $form.submit(function (ev) {
     data.name = $name.val();
     data.comment = $comment.val();
 
-    $.when($.ajax(req)).then(onSuccess, onFailure);
+    $.when($.ajax(req))
+        .then(onSuccess, onFailure)
+        .always(function () { isLocked = false; });
 });
 });

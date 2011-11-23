@@ -1,6 +1,6 @@
 <?php
 define('API_ENDPOINT', 'http://api.fwp-dyn.com/mail/send');
-define('EMAIL_TARGET', 'kristoffwalk@gmail.com');
+define('EMAIL_TARGET', 'info@lazycrazyacres.com');
 
 function proxy_request($url, $post) {
     $ch = curl_init();
