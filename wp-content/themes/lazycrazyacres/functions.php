@@ -22,11 +22,21 @@ class LCA_Facebook_Widget extends WP_Widget {
     }
 }
 
+function lca_custom_image_url($attr) {
+    $parts = parse_url(site_url());
+    $hostname_regex = '/^https?:\/\/' . $parts['host'] . '/i';
+    $rv = preg_replace($hostname_regex, '', $attr);
+    if ($rv[0] !== '/') {
+        $rv = '/' . $rv;
+    }
+    return $rv;
+}
+
 function lca_page_title_frame() {
     $custom_fields = get_post_custom();
     $page_title = $custom_fields['page_title'][0];
     if ($custom_fields['title_image'][0]) {
-        $title_image = get_template_directory_uri() . '/images/' . $custom_fields['title_image'][0];
+        $title_image = lca_custom_image_url($custom_fields['title_image'][0]);
         echo '<h4 class="page-title ir" style="background-image: url(' . $title_image . ');">';
     } else {
         echo '<h4 class="page-title">';
@@ -51,7 +61,7 @@ function lca_header_frame( $header_image ) {
         $header_image = $custom_fields['header_image'][0];
     }
 
-    $bg_image = get_template_directory_uri() . '/images/' . $header_image;
+    $bg_image = lca_custom_image_url($header_image);
     $is_homepage = is_page( 'welcome-to-lazy-crazy-acres' );
     if ( $is_homepage ) {
         echo '<header class="page-header homepage">';
