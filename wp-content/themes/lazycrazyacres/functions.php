@@ -54,6 +54,11 @@ function lca_get_title() {
     return $page_title;
 }
 
+function lca_title_by_path($path) {
+    $page = get_page_by_path($path);
+    echo $page->post_title;
+}
+
 function lca_header_frame( $header_image ) {
     $custom_fields = get_post_custom();
 

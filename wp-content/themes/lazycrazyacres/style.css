@@ -163,6 +163,7 @@ header.homepage div.logo-block {
 	line-height: 29px;
 	padding: 0 .7em;
 	text-decoration: none;
+	text-transform: lowercase;
 }
 #navigation ul.navigation li a:hover,
 #navigation ul.navigation li a.active {

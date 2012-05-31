@@ -28,22 +28,27 @@ lca_header_frame( $header_image ); ?>
     <ul class="navigation">
         <li><a href="<?php bloginfo( 'wpurl' ); ?>/about-lazy-crazy-acres"
             <?php if ( is_page( 'about-lazy-crazy-acres' ) ) { echo 'class="active"'; } ?>
-            title="All About Lazy Crazy Acres">about</a></li>
+            title="All About Lazy Crazy Acres">
+            <?php lca_title_by_path('about-lazy-crazy-acres'); ?></a></li>
 
         <li><a href="<?php bloginfo( 'wpurl' ); ?>/lazy-crazy-acres-creamery"
             <?php if ( is_page( 'lazy-crazy-acres-creamery' ) ) { echo 'class="active"'; } ?>
-            title="The Lazy Crazy Acres Creamery">creamery</a></li>
+            title="The Lazy Crazy Acres Creamery">
+            <?php lca_title_by_path('lazy-crazy-acres-creamery'); ?></a></li>
 
         <li><a href="<?php bloginfo( 'wpurl' ); ?>/lazy-crazy-acres-farm-table"
             <?php if ( is_page( 'lazy-crazy-acres-farm-table' ) ) { echo 'class="active"'; } ?>
-            title="Good Home Cooking from Lazy Crazy Acres">farmtable</a></li>
+            title="Good Home Cooking from Lazy Crazy Acres">
+            <?php lca_title_by_path('lazy-crazy-acres-farm-table'); ?></a></li>
 
         <li><a href="<?php bloginfo( 'wpurl' ); ?>/lazy-crazy-acres-event-calendar"
             <?php if ( is_page( 'lazy-crazy-acres-event-calendar' ) ) { echo 'class="active"'; } ?>
-            title="The Lazy Crazy Acres Calendar">calendar</a></li>
+            title="The Lazy Crazy Acres Calendar">
+            <?php lca_title_by_path('lazy-crazy-acres-event-calendar'); ?></a></li>
 
         <li><a href="<?php bloginfo( 'wpurl' ); ?>/lazy-crazy-acres-links"
             <?php if ( is_page( 'lazy-crazy-acres-links' ) ) { echo 'class="active"'; } ?>
-            title="Links we think you would like">links</a></li>
+            title="Links we think you would like">
+            <?php lca_title_by_path('lazy-crazy-acres-links'); ?></a></li>
     </ul>
 </nav>
