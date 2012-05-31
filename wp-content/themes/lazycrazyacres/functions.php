@@ -59,14 +59,16 @@ function lca_title_by_path($path) {
     echo $page->post_title;
 }
 
-function lca_header_frame( $header_image ) {
-    $custom_fields = get_post_custom();
-
-    if ( !$header_image ) {
-        $header_image = $custom_fields['header_image'][0];
+function lca_header_frame() {
+    if ( is_page() ) {
+        $custom_fields = get_post_custom();
+        $header_field = $custom_fields['header_image'][0];
+    } else {
+        // Dirty ugly hack. WordPress sucks.
+        $header_field = "/wp-content/uploads/2012/05/header5.png";
     }
 
-    $bg_image = lca_custom_image_url($header_image);
+    $bg_image = lca_custom_image_url($header_field);
     $is_homepage = is_page( 'welcome-to-lazy-crazy-acres' );
     if ( $is_homepage ) {
         echo '<header class="page-header homepage">';

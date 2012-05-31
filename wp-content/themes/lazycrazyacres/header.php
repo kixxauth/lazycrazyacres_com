@@ -16,13 +16,7 @@
 <body><div id="wrapper">
 
 <?php
-if ( is_page() ) {
-    $header_image = null;
-} else {
-    $header_image = 'header5.png';
-}
-
-lca_header_frame( $header_image ); ?>
+lca_header_frame(); ?>
 
 <nav id="navigation">
     <ul class="navigation">
