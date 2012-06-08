@@ -24,7 +24,7 @@ class LCA_Facebook_Widget extends WP_Widget {
 
 function lca_custom_image_url($attr) {
     $parts = parse_url(site_url());
-    $hostname_regex = '/^https?:\/\/' . $parts['host'] . '/i';
+    $hostname_regex = '/^https?:\/\/((www|test).lazycrazyacres.com|localhost)\//i';
     $rv = preg_replace($hostname_regex, '', $attr);
     if ($rv[0] !== '/') {
         $rv = '/' . $rv;
