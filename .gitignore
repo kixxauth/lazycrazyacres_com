@@ -15,3 +15,5 @@
 # Emacs tags files
 TAGS
 *.tags
+
+/wp-content/uploads/
