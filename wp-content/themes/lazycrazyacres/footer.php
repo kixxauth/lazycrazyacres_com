@@ -16,7 +16,7 @@
             title="Contact Lazy Crazy Acres">contact</a>
     </p>
     <p class="contact-info">
-        &copy; 2011 Lazy Crazy Acres
+        &copy; 2011 - <?php echo date('Y'); ?> Lazy Crazy Acres
         |
         845-802-4098
         |
