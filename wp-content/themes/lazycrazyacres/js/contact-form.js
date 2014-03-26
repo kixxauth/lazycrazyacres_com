@@ -72,13 +72,13 @@ $form.submit(function (ev) {
     var data = {}
       , req = {
             url: $form.attr('action')
-          , type: 'POST'
+          , type: $form.attr('method')
           , data: data
         }
-    
-    data.email = $email.val();
-    data.name = $name.val();
-    data.comment = $comment.val();
+
+    data.contact_email = $email.val();
+    data.contact_name = $name.val();
+    data.contact_comment = $comment.val();
 
     $.when($.ajax(req))
         .then(onSuccess, onFailure)

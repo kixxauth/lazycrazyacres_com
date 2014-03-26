@@ -11,18 +11,18 @@ the_post(); ?>
     <div class="content">
     <?php the_content(); ?>
     </div>
-    <form id="contact-form" action="<?php bloginfo( 'wpurl' ); ?>/contact-us.php" method="POST">
+    <form id="contact-form" action="<?php bloginfo( 'wpurl' ); ?>/contact-us-post/" method="POST">
         <fieldset class="first">
             <label for="id_name" class="lca">name:</label>
-            <input id="id_name" type="text" class="lca" name="name" size="32" />
+            <input id="id_name" type="text" class="lca" name="contact_name" size="32" />
         </fieldset>
         <fieldset>
             <label for="id_email" class="lca">email:</label>
-            <input id="id_email" type="text" class="lca" name="email" size="30" />
+            <input id="id_email" type="text" class="lca" name="contact_email" size="30" />
         </fieldset>
         <fieldset>
             <label for="id_comment" class="lca">leave a comment:</label>
-            <textarea id="id_comment" class="lca" name="comment"
+            <textarea id="id_comment" class="lca" name="contact_message"
                 cols="50" rows="8"></textarea>
         </fieldset>
         <fieldset class="form-buttons">
