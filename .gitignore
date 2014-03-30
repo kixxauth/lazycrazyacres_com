@@ -15,3 +15,6 @@
 # Emacs tags files
 TAGS
 *.tags
+
+# Keep database creds out of repo
+wp-config.php
