@@ -2,7 +2,7 @@
 /*
 Template Name: contact-us-post
 */
-define('EMAIL_TARGET', 'kris@fireworksproject.com');
+define('EMAIL_TARGET', 'info@lazycrazyacres.com');
 
 function proxy_request($post) {
     if (wp_mail($post['to'], $post['subject'], $post['text'])) {
