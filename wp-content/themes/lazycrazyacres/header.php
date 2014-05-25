@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <title>Lazy Crazy Acres</title>
   <meta name="description" content="Catskill Mountain grazing farm producting farmstead ice creams and bottled creamline milk.">
-  <meta name="author" content="Kris Walker <kris@kixx.name> (http://www.kixx.name)">
+  <meta name="author" content="Lazy Crazy Acres">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
   <script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.custom.93064.js"></script>
