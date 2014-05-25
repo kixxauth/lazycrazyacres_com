@@ -2,8 +2,8 @@
 
 class LCA_Facebook_Widget extends WP_Widget {
     function LCA_Facebook_Widget() {
-        $widget_ops = array( 'classname' => 'lca_facebook', 'description' => 'LCA Facebook Link');
-        $this->WP_Widget( 'lca-facebook', 'LCA Facebook Link', $wdget_opts);
+        $widget_opts = array( 'classname' => 'lca_facebook', 'description' => 'LCA Facebook Link');
+        $this->WP_Widget( 'lca-facebook', 'LCA Facebook Link', $widget_opts);
         $this->alt_option_name = 'widget_lca_facebook';
     }
 
