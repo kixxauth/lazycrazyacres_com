@@ -162,6 +162,7 @@ class s2_frontend extends s2class {
 							// the user is unknown or inactive
 							$this->add($this->email);
 							$status = $this->send_confirm('add');
+							$status = true; // DEBUG @kixxauth
 							// set a variable to denote that we've already run, and shouldn't run again
 							$this->filtered = 1;
 							if ( $status ) {
@@ -182,6 +183,7 @@ class s2_frontend extends s2class {
 							$status = $this->send_confirm('del');
 							// set a variable to denote that we've already run, and shouldn't run again
 							$this->filtered = 1;
+							$status = true; // DEBUG @kixxauth
 							if ( $status ) {
 								$this->s2form = $this->confirmation_sent;
 							} else {
