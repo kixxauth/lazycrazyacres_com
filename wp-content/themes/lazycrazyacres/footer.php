@@ -77,9 +77,9 @@
 <?php
 
 $custom_fields = get_post_custom();
-$scripts = $custom_fields['script'];
 
-if ( isset( $scripts ) ) { ?>
+if ( array_key_exists('scripts', $custom_fields) ) { ?>
+    $scripts = $custom_fields['script'];
     <script>var gG={templateDir:'<?php echo get_template_directory_uri() ?>'};</script>
 <?php
     foreach ( $scripts as &$path )  {

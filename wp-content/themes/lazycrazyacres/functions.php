@@ -60,8 +60,8 @@ function lca_title_by_path($path) {
 }
 
 function lca_header_frame() {
-    if ( is_page() ) {
-        $custom_fields = get_post_custom();
+    $custom_fields = get_post_custom();
+    if ( is_page() && array_key_exists('header_image', $custom_fields) ) {
         $header_field = $custom_fields['header_image'][0];
     } else {
         // Dirty ugly hack. WordPress sucks.
