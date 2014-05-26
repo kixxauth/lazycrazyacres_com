@@ -317,6 +317,27 @@ li.widget_archive ul a:hover {
 	color: #62290F;
 }
 
+li.s2_form_widget .widget-title {
+	font-size: 1.4em;
+}
+li.s2_form_widget label {
+	font-weight: bold;
+}
+li.s2_form_widget input[type="submit"] {
+	margin-top: 0.8em;
+	border: none;
+	-webkit-border-radius: .6em;
+	-moz-border-radius: .6em;
+	border-radius: .6em;
+	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+	background-color: #fff;
+	padding: .5em .7em;
+	font-weight: bold;
+}
+li.s2_form_widget input[type="submit"]:hover {
+	background-color: #bed07c;
+}
+
 .entry-title {
 	color: #97b83d;
 	font-size: 44px;
