@@ -231,6 +231,10 @@ header.homepage div.logo-block {
 	border: 2px solid #af9276;
 	margin: 0.5em;
 }
+.page-content div.content img.wp-smiley {
+	border: none;
+	margin: 0;
+}
 .page-content div.content img.alignleft {
 	float: left;
 	margin-left: 0;
