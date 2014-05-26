@@ -268,11 +268,11 @@ header.homepage div.logo-block {
 	padding: 0 12px;
 }
 
-#main ul.sidebar li.widget.widget_lca-facebook {
+#main ul.sidebar li.widget.lca_facebook {
 	background-image: none;
 	padding-bottom: 0;
 }
-#main ul.sidebar li.widget.widget_lca-facebook p.ir {
+#main ul.sidebar li.widget.lca_facebook p.ir {
 	height: 0;
 }
 h3.widget-title {
