@@ -231,10 +231,6 @@ header.homepage div.logo-block {
 	border: 2px solid #af9276;
 	margin: 0.5em;
 }
-.page-content div.content img.wp-smiley {
-	border: none;
-	margin: 0;
-}
 .page-content div.content img.alignleft {
 	float: left;
 	margin-left: 0;
@@ -247,6 +243,25 @@ header.homepage div.logo-block {
 .page-content div.content img.alignright {
 	float: right;
 	margin-right: 0;
+}
+.page-content div.content img.wp-smiley {
+	border: none;
+	margin: 0;
+}
+
+.page-content div.content .wp-caption {
+	margin-top: 1em;
+}
+.page-content div.content .wp-caption.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+}
+.page-content div.content .wp-caption img {
+	margin: 0.5em 0;
+}
+.page-content div.content .wp-caption-text {
+	font-size: 0.8em;
+	margin-top: 0;
 }
 
 #main ul.sidebar {
